@@ -60,7 +60,7 @@ ok "Installed: $SCRIPT_PATH"
 # ── Step 3: Configure Claude Code settings.json ────────────────────────────
 info "Configuring $SETTINGS_PATH..."
 
-STATUSLINE_VALUE="cat $STATUSLINE_CMD"
+STATUSLINE_VALUE="$STATUSLINE_CMD"
 
 # ── Primary: Python-based JSON merge ────────────────────────────────────────
 configure_with_python() {
