@@ -95,7 +95,7 @@ if os.path.exists(settings_path):
         settings = {}
 
 # Merge statusLine key
-settings["statusLine"] = {"command": statusline_value}
+settings["statusLine"] = {"type": "command", "command": statusline_value}
 
 # Write atomically
 tmp = settings_path + ".tmp"
@@ -109,7 +109,7 @@ PYEOF
 # ── Fallback: Pure bash ─────────────────────────────────────────────────────
 configure_with_bash() {
     local new_block
-    new_block=$(printf '  "statusLine": {\n    "command": "%s"\n  }' "$STATUSLINE_VALUE")
+    new_block=$(printf '  "statusLine": {\n    "type": "command",\n    "command": "%s"\n  }' "$STATUSLINE_VALUE")
 
     if [ ! -f "$SETTINGS_PATH" ]; then
         # No file — write minimal config
