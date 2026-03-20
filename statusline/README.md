@@ -40,6 +40,7 @@ curl -fsSL https://raw.githubusercontent.com/jitender-saini/claude-code/main/sta
    ```json
    {
      "statusLine": {
+       "type": "command",
        "command": "cat ~/.claude/statusline-command.sh"
      }
    }
